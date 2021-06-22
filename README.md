@@ -1,4 +1,4 @@
-# biirr
+# Biirr
 
 1.	Made use of product list https://api.punkapi.com/v2/beers for the first screen
 2.	Used https://api.punkapi.com/v2/beers/<product_id> for the second screen (detail page)
