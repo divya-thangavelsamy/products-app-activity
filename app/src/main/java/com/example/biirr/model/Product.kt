@@ -16,8 +16,8 @@ data class ProductDetails(
     val name: String,
     val tagline: String,
     val image_url: String,
-    val ibu: Double,
-    val abv: Double
+    val ibu: Double?,
+    val abv: Double?
 )
 
 

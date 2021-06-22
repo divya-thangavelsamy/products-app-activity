@@ -30,9 +30,7 @@ class ProductDetailsViewModel @Inject constructor(private val webService: WebSer
             .subscribe({ response -> onResponse(response) }, { t -> onFailure(t) })
     }
 
-    private fun onFailure(t: Throwable?) {
-        Log.d("Error", t.toString())
-    }
+    private fun onFailure(t: Throwable?) {}
 
     private fun onResponse(response: List<ProductDetails>) {
         _productDetails.postValue(response)

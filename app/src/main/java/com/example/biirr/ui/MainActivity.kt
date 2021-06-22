@@ -14,8 +14,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val TAG = "MainActivity"
-
     private val viewModel: MainActivityViewModel by viewModels()
 
     private lateinit var binding: ActivityMainBinding
@@ -30,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         binding.recycylerView.adapter = adapter
 
         viewModel.beerData.observe(this, Observer {
-            Log.d(TAG, "OnCreate : $it")
             adapter.setBeerList(it)
         })
 
