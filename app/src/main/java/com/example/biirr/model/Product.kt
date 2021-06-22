@@ -1,7 +1,7 @@
 package com.example.biirr.model
 
 data class Product(
-    val id: Int,
+    val id: Long,
     val name: String,
     val tagline: String,
     val image_url: String,
@@ -16,8 +16,8 @@ data class ProductDetails(
     val name: String,
     val tagline: String,
     val image_url: String,
-    val ibu: Double,
-    val abv: Double
+    val ibu: Double?,
+    val abv: Double?
 )
 
 

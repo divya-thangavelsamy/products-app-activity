@@ -44,9 +44,10 @@ class ProductDetailsActivity : AppCompatActivity() {
                 (it.firstOrNull()?.ibu!! > 20 && it.firstOrNull()?.ibu!! <= 50) -> binding.beerIBU.text =
                     "Bitter"
                 it.firstOrNull()?.ibu!! > 50 -> binding.beerIBU.text = "Hipster Plus"
+                else -> binding.beerIBU.text = "-"
             }
 
-            val abvP = it.firstOrNull()!!.abv / 100
+            val abvP = it.firstOrNull()!!.abv?.div(100) ?: "-"
             val defaultFormat: NumberFormat = NumberFormat.getPercentInstance()
             defaultFormat.setMinimumFractionDigits(1)
             var abvPercentage = defaultFormat.format(abvP)
