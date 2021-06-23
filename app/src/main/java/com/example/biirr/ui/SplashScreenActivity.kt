@@ -10,7 +10,7 @@ import com.example.biirr.R
 class SplashScreenActivity : AppCompatActivity() {
 
     private companion object {
-        const val SPLASH_SCREEN_DISPLAY_TIME_MILLISECONDS = 1500L
+        const val SPLASH_SCREEN_DISPLAY_TIME_MILLISECONDS = 2000L
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

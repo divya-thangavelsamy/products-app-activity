@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.biirr.adapter.MainActivityAdapter
 import com.example.biirr.databinding.ActivityMainBinding
 import com.example.biirr.viewModel.MainActivityViewModel
@@ -28,14 +29,23 @@ class MainActivity : AppCompatActivity() {
         binding.recycylerView.adapter = adapter
 
         viewModel.beerData.observe(this, Observer {
+           binding.swipeRefreshLayout.isRefreshing = false
             adapter.setBeerList(it)
         })
 
         viewModel.errorData.observe(this, { status ->
+            binding.swipeRefreshLayout.isRefreshing = false
             status.let {
                 Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
             }
         })
+
+       val refreshListener = SwipeRefreshLayout.OnRefreshListener {
+            binding.swipeRefreshLayout.isRefreshing = true
+            viewModel.loadBeers()
+        }
+
+        binding.swipeRefreshLayout.setOnRefreshListener(refreshListener);
 
         viewModel.loadBeers()
     }
