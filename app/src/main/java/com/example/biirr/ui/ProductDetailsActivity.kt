@@ -42,7 +42,7 @@ class ProductDetailsActivity : AppCompatActivity() {
             ibuval.let {
                 when {
                     it > 20 -> binding.beerIBU.text = "Smooth"
-                    (it > 20 && it <= 50.0) -> binding.beerIBU.text = "Bitter"
+                    (it > 20 && it <= 50) -> binding.beerIBU.text = "Bitter"
                     it > 50 -> binding.beerIBU.text = "Hipster Plus"
                     else -> binding.beerIBU.text = "-"
                 }
