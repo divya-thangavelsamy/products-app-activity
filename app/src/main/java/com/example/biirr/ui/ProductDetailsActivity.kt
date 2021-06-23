@@ -29,15 +29,13 @@ class ProductDetailsActivity : AppCompatActivity() {
         val productId = beerData.getIntExtra("productid", 0)
 
         viewModel.productDetails.observe(this, Observer {
+            val beerObj = it.firstOrNull()
+            binding.beerName.text = beerObj?.name
+            supportActionBar?.setTitle(beerObj?.name)
+            binding.beerTagline.text = beerObj?.tagline
 
-            binding.beerName.text = it.firstOrNull()?.name
-
-            supportActionBar?.setTitle(it.firstOrNull()?.name)
-
-            binding.beerTagline.text = it.firstOrNull()?.tagline
-
-            Glide.with(this).load(it.firstOrNull()?.image_url).into(binding.imgF)
-            val ibuval = it.firstOrNull()?.ibu?: 0.0
+            Glide.with(this).load(beerObj?.image_url).into(binding.imgF)
+            val ibuval = beerObj?.ibu?: 0.0
 
             ibuval.let {
                 when {
@@ -48,7 +46,7 @@ class ProductDetailsActivity : AppCompatActivity() {
                 }
             }
 
-            val abvP = it.firstOrNull()!!.abv?.div(100) ?: "-"
+            val abvP = beerObj!!.abv?.div(100) ?: "-"
             val defaultFormat: NumberFormat = NumberFormat.getPercentInstance()
             defaultFormat.setMinimumFractionDigits(1)
             var abvPercentage = defaultFormat.format(abvP)
