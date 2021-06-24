@@ -1,6 +1,7 @@
 package com.example.biirr.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.widget.TextView
@@ -21,10 +22,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var adapter: ProductListAdapter
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var emptyText: TextView
-    private lateinit var refreshView: SwipeRefreshLayout
+    private lateinit var adapter : ProductListAdapter
+    private lateinit var recyclerView : RecyclerView
+    private lateinit var emptyText : TextView
+    private lateinit var refreshView : SwipeRefreshLayout
 
     private val viewModel: MainActivityViewModel by viewModels()
 
@@ -40,7 +41,10 @@ class MainActivity : AppCompatActivity() {
         refreshView = binding.swipeRefreshLayout
         adapter = ProductListAdapter(this)
         recyclerView.adapter = adapter
+    }
 
+    override fun onResume() {
+        super.onResume()
         viewModel.loadBeers()
 
         viewModel.beerData.observe(this, Observer {

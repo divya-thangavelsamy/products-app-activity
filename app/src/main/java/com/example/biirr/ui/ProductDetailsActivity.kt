@@ -35,12 +35,14 @@ class ProductDetailsActivity : AppCompatActivity() {
         productIBU = binding.beerIBU
         productABV = binding.beerabv
         productImage = binding.imgF
+    }
 
+    override fun onResume() {
+        super.onResume()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setTitle("Beer Details")
-
         val beerData = intent
         val productId = beerData.getIntExtra("productid", 0)
+        viewModel.getProductDetails(productId)
 
         viewModel.productDetails.observe(this, Observer {
             val beerObj = it.firstOrNull()
@@ -49,11 +51,11 @@ class ProductDetailsActivity : AppCompatActivity() {
             productTagline.text = beerObj?.tagline ?: "-"
 
             Glide.with(this).load(beerObj?.image_url).into(productImage)
-            val ibuValue = beerObj?.ibu?: 0.0
+            val ibuValue = beerObj?.ibu ?: 0.0
 
             ibuValue.let {
                 when {
-                    it > 20 -> productIBU.text = "Smooth"
+                    it < 20 -> productIBU.text = "Smooth"
                     (it > 20 && it <= 50) -> productIBU.text = "Bitter"
                     it > 50 -> productIBU.text = "Hipster Plus"
                     else -> productIBU.text = "-"
@@ -66,8 +68,6 @@ class ProductDetailsActivity : AppCompatActivity() {
             var abvPercentage = defaultFormat.format(abvP)
             productABV.text = abvPercentage
         })
-
-        viewModel.getProductDetails(productId)
     }
 
     override fun onSupportNavigateUp(): Boolean {
