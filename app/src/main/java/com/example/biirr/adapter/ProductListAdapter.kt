@@ -11,9 +11,9 @@ import com.example.biirr.model.Product
 import com.example.biirr.ui.ProductDetailsActivity
 
 
-class MainActivityAdapter(private var context: Context) :
+class ProductListAdapter(private var context: Context) :
 
-    RecyclerView.Adapter<MainActivityAdapter.ViewHolder>() {
+    RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
 
     var beers = mutableListOf<Product>()
 

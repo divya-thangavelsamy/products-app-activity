@@ -27,7 +27,9 @@ class MainActivityViewModel @Inject constructor(private val webService: WebServi
         disposable = webService.getBeerInfo()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
-            .subscribe({ response -> onResponse(response) }, { error -> onFailure(error) })
+            .subscribe(
+                { response -> onResponse(response) },
+                { error -> onFailure(error) })
     }
 
     private fun onFailure(error: Throwable?) {
@@ -37,6 +39,15 @@ class MainActivityViewModel @Inject constructor(private val webService: WebServi
 
     private fun onResponse(response: List<Product>?) {
         setProduct(response)
+    }
+
+    fun getSearchedBeer(beerName : String){
+        disposable = webService.getSearchedProduct(beerName)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+            .subscribe(
+                { data -> onResponse(data) },
+                { error ->onFailure(error) })
     }
 
     fun setProduct(response: List<Product>?) {
