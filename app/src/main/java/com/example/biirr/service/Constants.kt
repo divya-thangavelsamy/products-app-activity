@@ -1,10 +1,9 @@
 package com.example.biirr.service
 
-class Constants {
+object Constants {
 
-    companion object {
-        val API_VERSION = "v2"
-        val BASE_URL = "https://api.punkapi.com/" + API_VERSION + "/"
-        val NETWORK_ERROR_MSG = "Please make sure you are connected to the internet"
-    }
+      const val API_VERSION = "v2"
+      const val BASE_URL = "https://api.punkapi.com/v2/"
+      const  val NETWORK_ERROR_MSG = "Please make sure you are connected to the internet"
+
 }
