@@ -1,10 +1,17 @@
 package com.beer.product.domain
 
-import com.beer.product.data.repository.ProductListRepository
+import com.beer.product.data.dto.ProductListResponse
+import com.beer.product.data.repository.ProductListRepositoryImpl
+import io.reactivex.Single
 import javax.inject.Inject
 
-class HomeUseCase @Inject constructor(private val repository: ProductListRepository) {
+interface HomeUseCase {
+    operator fun invoke(): Single<List<ProductListResponse>>
+}
 
-    suspend operator fun invoke() = repository.fetchProductList()
+class HomeUseCaseImpl @Inject constructor(private val repository: ProductListRepositoryImpl) :
+    HomeUseCase {
 
+    override operator fun invoke(): Single<List<ProductListResponse>> =
+        repository.fetchProductList()
 }

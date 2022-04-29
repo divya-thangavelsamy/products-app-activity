@@ -3,31 +3,45 @@ package com.beer.product.ui.productDetails
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.beer.product.data.dto.Product
-import com.beer.product.data.repository.NetworkState
-import com.beer.product.domain.DetailsUseCase
+import com.beer.product.data.dto.ProductDetailsResponse
+import com.beer.product.data.repository.ResultOf
+import com.beer.product.domain.DetailsUseCaseImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductDetailsViewModel @Inject constructor(private val detailsUseCase: DetailsUseCase) :
+class ProductDetailsViewModel @Inject constructor(private val detailsUseCase: DetailsUseCaseImpl) :
     ViewModel() {
 
-    private val _productDetails = MutableLiveData<Product>()
-    val productDetails : LiveData<Product>
+    private val compositeDisposable = CompositeDisposable()
+
+    private val _productDetails = MutableLiveData<ResultOf<ProductDetailsResponse>>()
+    val productDetails: LiveData<ResultOf<ProductDetailsResponse>>
         get() = _productDetails
 
-    private val _networkState = MutableLiveData<NetworkState>()
-    val networkState : LiveData<NetworkState>
-        get() = _networkState
+    fun fetchProductDetails(id: Int) {
+        compositeDisposable.add(
+            detailsUseCase(id).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(
+                    { data -> onResponse(data) },
+                    { error -> onFailure(error) })
+        )
+    }
 
-    fun fetchProductDetails(id: Int) = viewModelScope.launch (Dispatchers.IO) {
-        _networkState.postValue(NetworkState.LOADING)
-        val details = detailsUseCase.invoke(id)
-        _productDetails.postValue(details)
-        _networkState.postValue(NetworkState.LOADED)
+    private fun onFailure(error: Throwable?) {
+        _productDetails.postValue(ResultOf.Failure(error))
     }
+
+    private fun onResponse(data: ProductDetailsResponse) {
+        _productDetails.postValue(ResultOf.Success(data))
     }
+
+    override fun onCleared() {
+        compositeDisposable.dispose()
+        super.onCleared()
+    }
+}

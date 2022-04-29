@@ -1,7 +1,6 @@
 package com.beer.product.ui.productDetails
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import coil.api.load
+import com.beer.product.data.repository.ResultOf
 import com.example.product.databinding.FragmentDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,23 +33,29 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.fetchProductDetails(args.id)
-        viewModel.productDetails.observe(viewLifecycleOwner, Observer {
-            detailsBinding.beerName.text = it.name
-            detailsBinding.beerTagline.text = it.tagline
-            detailsBinding.imgF.load(it.image_url)
-            val ibuValue = it.ibu
-            ibuValue.let {
-                when {
-                    it < 20 -> detailsBinding.beerIBU.text = "Smooth"
-                    (it > 20 && it <= 50) -> detailsBinding.beerIBU.text = "Bitter"
-                    it > 50 -> detailsBinding.beerIBU.text = "Hipster Plus"
-                    else -> detailsBinding.beerIBU.text = "-"
+        with(viewModel) {
+            this.fetchProductDetails(args.id)
+            this.productDetails.observe(viewLifecycleOwner, Observer {
+                when (it) {
+                    is ResultOf.Success -> {
+                        with(detailsBinding) {
+                         progressBar.visibility = View.GONE
+                            beerName.text = it.value.name
+                            beerTagline.text = it.value.tagline
+                            imgF.load(it.value.image_url)
+                            beerIBU.text = it.value.ibu.toString()
+                            beerabv.text = it.value.abv.toString()
+                        }
+                    }
+                    is ResultOf.Failure -> {
+                        detailsBinding.errorText.visibility = View.VISIBLE
+                    }
+                    is ResultOf.Loading -> {
+                        detailsBinding.progressBar.visibility = View.GONE
+                    }
                 }
-            }
-            detailsBinding.beerabv.text = it.abv.toString()
-        })
-        viewModel.networkState.observe(viewLifecycleOwner, {})
+            })
+        }
     }
 }
 

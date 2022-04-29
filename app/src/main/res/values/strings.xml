@@ -9,5 +9,5 @@
     <string name="hello_blank_data_fragment">Hello Data fragment</string>
     <string name="go_to_data_fragment">GO to Data Fragment</string>
     <string name="go_to_home_fragment">GO to Home Fragment</string>
-    <string name="connection_problem">Connection Problem</string>
+    <string name="server_error">We are unable to complete your request please try again later</string>
 </resources>

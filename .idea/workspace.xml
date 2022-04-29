@@ -32,18 +32,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5e1fc44-a0ac-4531-b1ae-9d0e6d4c1318" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/database/AppDatabase.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/database/dao/ProductDao.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/database/entity/DatabaseProductDetails.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/database/entity/DatabaseProductListItem.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/di/DatabaseModule.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/di/RepositoryModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/di/RepositoryModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/mapper/DatabaseDetailsMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/mapper/DatabaseListMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/mapper/ProductDetailsMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/mapper/ProductListMapper.kt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/ProductDetails.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/ProductDetailsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/ProductListResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/mapper/ProductDetailsMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/mapper/ProductListMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/api/WebService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/api/WebService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/di/RepositoryModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/NetworkState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/NetworkState.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/ProductDetailsRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/ProductDetailsRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/ProductListRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/ProductListRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/DetailsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/DetailsUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/HomeUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/HomeUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/DetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/DetailsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/HomeViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +102,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="navigationResourceFile" />
-        <option value="Kotlin Data Class" />
         <option value="JUnit4 Test Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -140,7 +151,7 @@
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
+    <property name="settings.editor.selected.configurable" value="emulator" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="PsdUISettings">
@@ -408,6 +419,8 @@
         <watch expression="args.id" language="kotlin" />
         <watch expression="it" language="kotlin" />
         <watch expression="database.productDao.getProductDetails(id)" language="kotlin" />
+        <watch expression="it" language="kotlin" />
+        <watch expression="webService.getProductList()" language="kotlin" />
       </configuration>
     </watches-manager>
   </component>

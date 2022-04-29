@@ -1,22 +1,23 @@
 package com.beer.product.ui.productList
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
-import com.beer.product.data.dto.Product
+import com.beer.product.data.dto.ProductListResponse
 import com.example.product.databinding.ListProductBinding
 import dagger.hilt.android.scopes.FragmentScoped
 import javax.inject.Inject
 
 @FragmentScoped
 class ProductListAdapter @Inject constructor(val clickListener: ClickListener) :
-    ListAdapter<Product, ProductListAdapter.ViewHolder>(ProductListDiffCallback()) {
+    ListAdapter<ProductListResponse, ProductListAdapter.ViewHolder>(ProductListDiffCallback()) {
 
     class ViewHolder(val binding: ListProductBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Product, clickListener: ClickListener) {
+        fun bind(item: ProductListResponse, clickListener: ClickListener) {
             binding.beerName.text = item.name
             binding.tagline.text = item.tagline
             binding.beerImage.load(item.image_url)
@@ -43,13 +44,14 @@ class ProductListAdapter @Inject constructor(val clickListener: ClickListener) :
         holder.bind(beerlist, clickListener)
     }
 
-    class ProductListDiffCallback : DiffUtil.ItemCallback<Product>() {
+    class ProductListDiffCallback : DiffUtil.ItemCallback<ProductListResponse>() {
 
-        override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
+        override fun areItemsTheSame(oldItem: ProductListResponse, newItem: ProductListResponse): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
+        @SuppressLint("DiffUtilEquals")
+        override fun areContentsTheSame(oldItem: ProductListResponse, newItem: ProductListResponse): Boolean {
             return oldItem == newItem
         }
     }
@@ -57,9 +59,9 @@ class ProductListAdapter @Inject constructor(val clickListener: ClickListener) :
 
 class ClickListener @Inject constructor() {
 
-    var onItemClick: ((Product) -> Unit)? = null
+    var onItemClick: ((ProductListResponse) -> Unit)? = null
 
-    fun onClick(data: Product) {
+    fun onClick(data: ProductListResponse) {
         onItemClick?.invoke(data)
     }
 }
