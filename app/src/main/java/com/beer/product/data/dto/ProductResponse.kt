@@ -1,6 +1,6 @@
 package com.beer.product.data.dto
 
- class ProductListResponse (
+class ProductResponse (
         val id: Int,
         val name: String,
         val tagline: String,

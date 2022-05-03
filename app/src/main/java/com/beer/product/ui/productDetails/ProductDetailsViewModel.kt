@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.beer.product.data.dto.ProductDetailsResponse
 import com.beer.product.data.repository.ResultOf
 import com.beer.product.domain.DetailsUseCaseImpl
+import com.beer.product.domain.ProductDetailsDomainModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -18,8 +19,8 @@ class ProductDetailsViewModel @Inject constructor(private val detailsUseCase: De
 
     private val compositeDisposable = CompositeDisposable()
 
-    private val _productDetails = MutableLiveData<ResultOf<ProductDetailsResponse>>()
-    val productDetails: LiveData<ResultOf<ProductDetailsResponse>>
+    private val _productDetails = MutableLiveData<ResultOf<ProductDetailsDomainModel>>()
+    val productDetails: LiveData<ResultOf<ProductDetailsDomainModel>>
         get() = _productDetails
 
     fun fetchProductDetails(id: Int) {
@@ -36,7 +37,7 @@ class ProductDetailsViewModel @Inject constructor(private val detailsUseCase: De
         _productDetails.postValue(ResultOf.Failure(error))
     }
 
-    private fun onResponse(data: ProductDetailsResponse) {
+    private fun onResponse(data: ProductDetailsDomainModel) {
         _productDetails.postValue(ResultOf.Success(data))
     }
 

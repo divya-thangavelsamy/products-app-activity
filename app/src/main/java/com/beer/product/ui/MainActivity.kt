@@ -1,4 +1,4 @@
-package com.beer.product.ui.productList
+package com.beer.product.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

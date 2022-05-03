@@ -9,16 +9,16 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.beer.product.data.repository.ResultOf
-import com.example.product.databinding.FragmentHomeBinding
+import com.example.product.databinding.FragmentProductListBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class ProductListFragment : Fragment() {
 
-    private lateinit var homeBinding: FragmentHomeBinding
+    private lateinit var homeBinding: FragmentProductListBinding
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: ProductListViewModel by viewModels()
 
     @Inject
     lateinit var adapter: ProductListAdapter
@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        homeBinding = FragmentHomeBinding.inflate(layoutInflater)
+        homeBinding = FragmentProductListBinding.inflate(layoutInflater)
 
         with(homeBinding) {
             recyclerView.adapter = adapter
@@ -35,31 +35,51 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.fetchProductList()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.productList.observe(viewLifecycleOwner, Observer {
-            when(it) {
+            when (it) {
                 is ResultOf.Success -> {
-                    homeBinding.progressBar.visibility = View.GONE
+                    homeBinding.toolbarHome.setTitle("Beer List")
+                    homeBinding.progressBar.hide()
                     adapter.submitList(it.value)
                 }
                 is ResultOf.Failure -> {
-                    homeBinding.errorText.visibility = View.VISIBLE
+                    homeBinding.errorText.show()
                 }
                 is ResultOf.Loading -> {
-                    homeBinding.progressBar.visibility = View.GONE
+                    homeBinding.progressBar.show()
                 }
             }
         })
 
         adapter.clickListener.onItemClick = {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                ProductListFragmentDirections.actionHomeFragmentToDetailsFragment(
                     it.id
                 )
             )
         }
+    }
+
+    private fun View.show(): View {
+        if (visibility != View.VISIBLE) {
+            visibility = View.VISIBLE
+        }
+        return this
+    }
+
+    private fun View.hide(): View {
+        if (visibility != View.GONE) {
+            visibility = View.GONE
+        }
+        return this
     }
 }
 

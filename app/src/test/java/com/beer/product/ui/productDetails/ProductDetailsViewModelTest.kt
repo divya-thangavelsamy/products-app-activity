@@ -3,8 +3,9 @@ package com.beer.product.ui.productDetails
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.beer.product.RxImmediateSchedulerRule
 import com.beer.product.data.repository.ResultOf
-import com.beer.product.domain.*
-import com.beer.product.ui.productList.ProductListViewModel
+import com.beer.product.domain.DetailsUseCaseImpl
+import com.beer.product.domain.DetailsUseCaseTest
+import com.beer.product.domain.ProductDetailsDomainModel
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.unmockkAll
@@ -15,12 +16,12 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class HomeViewModelTest {
+class ProductDetailsViewModelTest {
 
-    private val useCase = mockk<HomeUseCaseImpl>()
-    private val productListDomainModel = mockk<ProductListDomainModel>()
-    private val mockLiveDataObserver = mockk<ResultOf<ProductListDomainModel>>()
-    private lateinit var viewModel: ProductListViewModel
+    private val useCase = mockk<DetailsUseCaseImpl>()
+    private val productDetailsDomainModel = mockk<ProductDetailsDomainModel>()
+    private val mockLiveDataObserver = mockk<ResultOf<ProductDetailsDomainModel>>()
+    private lateinit var viewModel: ProductDetailsViewModel
 
     @Rule
     @JvmField
@@ -32,7 +33,7 @@ class HomeViewModelTest {
 
     @Before
     fun setUp() {
-        viewModel = ProductListViewModel(useCase)
+        viewModel = ProductDetailsViewModel(useCase)
     }
 
     @After
@@ -43,26 +44,28 @@ class HomeViewModelTest {
     @Test
     fun `WHEN fetchProductDetails called THEN update livedata on Response`() {
         every {
-            useCase.invoke()
-        } returns Single.just(listOf(productListDomainModel))
+            useCase.invoke(2)
+        } returns Single.just(productDetailsDomainModel)
 
-        viewModel.productList.observeForever { mockLiveDataObserver }
-        viewModel.fetchProductList()
 
-        assertEquals(viewModel.productList.value, ResultOf.Success(listOf(productListDomainModel)))
+        viewModel.productDetails.observeForever { mockLiveDataObserver }
+        viewModel.fetchProductDetails(2)
+
+        assertEquals(viewModel.productDetails.value, ResultOf.Success(productDetailsDomainModel))
     }
 
     @Test
     fun `WHEN fetchProductDetails called THEN update livedata on Failure`() {
         val throwable = Throwable(TEST_ERROR_MESSAGE)
         every {
-            useCase.invoke()
+            useCase.invoke(2)
         } returns Single.error(throwable)
 
-        viewModel.productList.observeForever { mockLiveDataObserver }
-        viewModel.fetchProductList()
 
-        assertEquals(viewModel.productList.value, ResultOf.Failure(throwable))
+        viewModel.productDetails.observeForever { mockLiveDataObserver }
+        viewModel.fetchProductDetails(2)
+
+        assertEquals(viewModel.productDetails.value, ResultOf.Failure(throwable))
     }
 
     private companion object {

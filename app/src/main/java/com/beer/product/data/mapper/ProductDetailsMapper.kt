@@ -1,17 +1,17 @@
 package com.beer.product.data.mapper
 
-import com.beer.product.data.dto.ProductDetails
 import com.beer.product.data.dto.ProductDetailsResponse
+import com.beer.product.domain.ProductDetailsDomainModel
 import javax.inject.Inject
 
 class ProductDetailsMapper @Inject constructor() {
-    fun map(item: ProductDetails): ProductDetailsResponse {
+    fun map(item: ProductDetailsResponse): ProductDetailsDomainModel {
         return with(item) {
-            ProductDetailsResponse(
+            ProductDetailsDomainModel(
                 id = id,
                 name = name,
                 tagline = tagline,
-                image_url = image_url,
+                imageUrl = image_url,
                 ibu = ibu,
                 abv = abv
             )

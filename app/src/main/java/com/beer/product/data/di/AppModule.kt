@@ -2,6 +2,11 @@ package com.beer.product.data.di
 
 import android.content.Context
 import com.beer.product.data.api.WebService
+import com.beer.product.data.mapper.ProductListMapper
+import com.beer.product.data.repository.ProductListRepositoryImpl
+import com.beer.product.domain.HomeUseCase
+import com.beer.product.domain.HomeUseCaseImpl
+import com.beer.product.domain.ProductListRepository
 import com.beer.product.utils.Constants
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
@@ -20,25 +25,11 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    fun client(@ApplicationContext context: Context): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addInterceptor(
-                ChuckerInterceptor.Builder(context)
-                    .collector(ChuckerCollector(context))
-                    .maxContentLength(250000L)
-                    .redactHeaders(emptySet())
-                    .alwaysReadResponseBody(false)
-                    .build()
-            )
-            .build()
-    }
-
     @Provides
     @Singleton
     fun provideRetrofit(@ApplicationContext context: Context): Retrofit {
         return Retrofit
             .Builder()
-            .client(client(context))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(Constants.BASE_URL).build()

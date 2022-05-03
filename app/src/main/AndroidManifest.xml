@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Biirr">
 
-        <activity android:name="com.beer.product.ui.productList.MainActivity" />
+        <activity android:name="com.beer.product.ui.MainActivity" />
         <activity
             android:name="com.beer.product.ui.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

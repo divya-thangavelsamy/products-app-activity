@@ -7,20 +7,20 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
-import com.beer.product.data.dto.ProductListResponse
+import com.beer.product.domain.ProductListDomainModel
 import com.example.product.databinding.ListProductBinding
 import dagger.hilt.android.scopes.FragmentScoped
 import javax.inject.Inject
 
 @FragmentScoped
 class ProductListAdapter @Inject constructor(val clickListener: ClickListener) :
-    ListAdapter<ProductListResponse, ProductListAdapter.ViewHolder>(ProductListDiffCallback()) {
+    ListAdapter<ProductListDomainModel, ProductListAdapter.ViewHolder>(ProductListDiffCallback()) {
 
     class ViewHolder(val binding: ListProductBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: ProductListResponse, clickListener: ClickListener) {
+        fun bind(item: ProductListDomainModel, clickListener: ClickListener) {
             binding.beerName.text = item.name
             binding.tagline.text = item.tagline
-            binding.beerImage.load(item.image_url)
+            binding.beerImage.load(item.imageUrl)
             binding.root.setOnClickListener {
                 clickListener.onClick(item)
             }
@@ -44,14 +44,14 @@ class ProductListAdapter @Inject constructor(val clickListener: ClickListener) :
         holder.bind(beerlist, clickListener)
     }
 
-    class ProductListDiffCallback : DiffUtil.ItemCallback<ProductListResponse>() {
+    class ProductListDiffCallback : DiffUtil.ItemCallback<ProductListDomainModel>() {
 
-        override fun areItemsTheSame(oldItem: ProductListResponse, newItem: ProductListResponse): Boolean {
+        override fun areItemsTheSame(oldItem: ProductListDomainModel, newItem: ProductListDomainModel): Boolean {
             return oldItem.id == newItem.id
         }
 
         @SuppressLint("DiffUtilEquals")
-        override fun areContentsTheSame(oldItem: ProductListResponse, newItem: ProductListResponse): Boolean {
+        override fun areContentsTheSame(oldItem: ProductListDomainModel, newItem: ProductListDomainModel): Boolean {
             return oldItem == newItem
         }
     }
@@ -59,9 +59,9 @@ class ProductListAdapter @Inject constructor(val clickListener: ClickListener) :
 
 class ClickListener @Inject constructor() {
 
-    var onItemClick: ((ProductListResponse) -> Unit)? = null
+    var onItemClick: ((ProductListDomainModel) -> Unit)? = null
 
-    fun onClick(data: ProductListResponse) {
+    fun onClick(data: ProductListDomainModel) {
         onItemClick?.invoke(data)
     }
 }

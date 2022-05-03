@@ -1,18 +1,18 @@
 package com.beer.product.data.mapper
 
-import com.beer.product.data.dto.Product
-import com.beer.product.data.dto.ProductListResponse
+import com.beer.product.data.dto.ProductResponse
+import com.beer.product.domain.ProductListDomainModel
 import javax.inject.Inject
 
 class ProductListMapper @Inject constructor() {
-    fun map(item: List<Product>) : List<ProductListResponse> {
+    fun map(item: List<ProductResponse>) : List<ProductListDomainModel> {
         return item.map {
             with(it) {
-                ProductListResponse(
+                ProductListDomainModel(
                     id = id,
                     name = name,
-                    tagline = name,
-                    image_url =  image_url
+                    tagline = tagline,
+                    imageUrl =  image_url
                 )
             }
         }

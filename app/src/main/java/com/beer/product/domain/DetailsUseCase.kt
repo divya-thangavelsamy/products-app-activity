@@ -6,12 +6,12 @@ import io.reactivex.Single
 import javax.inject.Inject
 
 interface DetailsUseCase {
-    fun invoke(id: Int): Single<ProductDetailsResponse>
+    operator fun invoke(id: Int): Single<ProductDetailsDomainModel>
 }
 
 class DetailsUseCaseImpl @Inject constructor(private val repository: ProductDetailsRepositoryImpl) :
     DetailsUseCase {
 
-    override operator fun invoke(id: Int): Single<ProductDetailsResponse> =
+    override operator fun invoke(id: Int): Single<ProductDetailsDomainModel> =
         repository.fetchProductDetails(id)
 }
