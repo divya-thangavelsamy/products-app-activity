@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.api.load
 import com.beer.product.data.repository.ResultOf
+import com.beer.product.domain.ProductDetailsDomainModel
 import com.example.product.R
 import com.example.product.databinding.FragmentProductDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,19 +46,8 @@ class ProductDetailsFragment : Fragment() {
             this.productDetails.observe(viewLifecycleOwner, Observer {
                 when (it) {
                     is ResultOf.Success -> {
-                        with(detailsBinding) {
-                            progressBar.hide()
-                            toolbarDetails.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
-                            toolbarDetails.setNavigationOnClickListener {
-                                findNavController().popBackStack()
-                            }
-                            toolbarDetails.setTitle(it.value.name)
-                            beerName.text = it.value.name
-                            beerTagline.text = it.value.tagline
-                            imgF.load(it.value.imageUrl)
-                            beerIBU.text = it.value.ibu.toString()
-                            beerabv.text = it.value.abv.toString()
-                        }
+                        setToolBar(it)
+                        setText(it)
                     }
                     is ResultOf.Failure -> {
                         detailsBinding.errorText.show()
@@ -67,6 +57,27 @@ class ProductDetailsFragment : Fragment() {
                     }
                 }
             })
+        }
+    }
+
+    private fun setToolBar(result: ResultOf.Success<ProductDetailsDomainModel>) {
+        with(detailsBinding.toolbarDetails) {
+            setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
+            setNavigationOnClickListener {
+                findNavController().popBackStack()
+            }
+            setTitle(result.value.name)
+        }
+    }
+
+    private fun setText(result: ResultOf.Success<ProductDetailsDomainModel>) {
+        with(detailsBinding) {
+            beerName.text = result.value.name
+            beerTagline.text = result.value.tagline
+            imgF.load(result.value.imageUrl)
+            beerIBU.text = result.value.ibu.toString()
+            beerabv.text = result.value.abv.toString()
+            progressBar.hide()
         }
     }
 

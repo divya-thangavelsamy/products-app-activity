@@ -11,10 +11,10 @@ class ProductListRepositoryImpl @Inject constructor(
     private val webService: WebService,
     private val productListMapper: ProductListMapper
 ) : ProductListRepository {
-     override fun fetchProductList(): Single<List<ProductListDomainModel>> {
+    override fun fetchProductList(): Single<List<ProductListDomainModel>> {
         return webService.getProductList()
             .map {
                 productListMapper.map(it)
             }
-     }
+    }
 }

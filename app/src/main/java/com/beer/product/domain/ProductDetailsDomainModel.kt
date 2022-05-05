@@ -1,6 +1,6 @@
 package com.beer.product.domain
 
-class ProductDetailsDomainModel(
+data class ProductDetailsDomainModel(
     val id: Int,
     val name: String,
     val tagline: String,

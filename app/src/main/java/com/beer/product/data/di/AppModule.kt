@@ -2,20 +2,17 @@ package com.beer.product.data.di
 
 import android.content.Context
 import com.beer.product.data.api.WebService
+import com.beer.product.data.mapper.ProductDetailsMapper
 import com.beer.product.data.mapper.ProductListMapper
+import com.beer.product.data.repository.ProductDetailsRepositoryImpl
 import com.beer.product.data.repository.ProductListRepositoryImpl
-import com.beer.product.domain.HomeUseCase
-import com.beer.product.domain.HomeUseCaseImpl
-import com.beer.product.domain.ProductListRepository
+import com.beer.product.domain.*
 import com.beer.product.utils.Constants
-import com.chuckerteam.chucker.api.ChuckerCollector
-import com.chuckerteam.chucker.api.ChuckerInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -39,5 +36,35 @@ object AppModule {
     @Singleton
     fun provideWebservice(retrofit: Retrofit): WebService {
         return retrofit.create(WebService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideListRepository(
+        webService: WebService,
+        mapper: ProductListMapper
+    ): ProductListRepository {
+        return ProductListRepositoryImpl(webService, mapper)
+    }
+
+    @Provides
+    @Singleton
+    fun provideListUseCase(repository: ProductListRepository): ProductListUseCase {
+        return HomeUseCaseImpl(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDetailsRepository(
+        webService: WebService,
+        mapper: ProductDetailsMapper
+    ): ProductDetailsRepository {
+        return ProductDetailsRepositoryImpl(webService, mapper)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDetailsUseCase(repository: ProductDetailsRepository): ProductDetailsUseCase {
+        return ProductDetailsUseCaseImpl(repository)
     }
 }
