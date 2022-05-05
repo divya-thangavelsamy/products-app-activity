@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Biirr</string>
+    <string name="app_name">Beer</string>
     <string name="no_data">No beers</string>
+    <string name="product_ibu">IBU :</string>
+    <string name="product_abv">ABV :</string>
+    <string name="product_image">Product Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello Home fragment</string>
+    <string name="hello_blank_data_fragment">Hello Data fragment</string>
+    <string name="go_to_data_fragment">GO to Data Fragment</string>
+    <string name="go_to_home_fragment">GO to Home Fragment</string>
+    <string name="server_error">We are unable to complete your request please try again later</string>
 </resources>
