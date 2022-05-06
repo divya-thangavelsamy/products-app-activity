@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
@@ -32,31 +32,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5e1fc44-a0ac-4531-b1ae-9d0e6d4c1318" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductDetailsUseCaseImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListUseCaseImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/api/WebService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/api/WebService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/di/AppModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/ProductDetailsResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/ProductDetailsResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/ProductResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/dto/ProductResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/mapper/ProductListMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/mapper/ProductListMapper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/NetworkState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/NetworkState.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/ProductListRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/ProductListRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/DetailsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductDetailsUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/HomeUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductDetailsDomainModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductDetailsDomainModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListDomainModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListDomainModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListUseCaseImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListUseCaseImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/beer/product/data/mapper/ProductListMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/beer/product/data/mapper/ProductListMapperTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/beer/product/domain/DetailsUseCaseTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/beer/product/domain/DetailsUseCaseTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/beer/product/domain/HomeUseCaseTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/beer/product/domain/HomeUseCaseTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/beer/product/ui/productDetails/ProductDetailsViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/beer/product/ui/productDetails/ProductDetailsViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/beer/product/ui/productList/HomeViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/beer/product/ui/productList/HomeViewModelTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[40608963]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/divthang/.android/avd/Pixel_3a_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -245,12 +239,12 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomeViewModelTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductDetailsUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.beer.product.ui.productDetails.HomeViewModelTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.beer.product.domain.ProductDetailsUseCaseTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -266,12 +260,33 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="HomeViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductDetailsViewModelTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.beer.product.ui.productDetails.HomeViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.beer.product.ui.productDetails.ProductDetailsViewModelTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductDetailsViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.beer.product.ui.productDetails.ProductDetailsViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -308,33 +323,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProductListMapperTest.WHEN mapper maps response and THEN returns valid domain model" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductListViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.beer.product.data.mapper.ProductListMapperTest.WHEN mapper maps response and THEN returns valid domain model&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:testDebugUnitTest" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests in 'com.beer.product'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.beer.product.*&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.beer.product.ui.productDetails.ProductListViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -352,11 +346,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'com.beer.product'" />
-        <item itemvalue="Gradle.ProductListMapperTest.WHEN mapper maps response and THEN returns valid domain model" />
+        <item itemvalue="Gradle.ProductDetailsUseCaseTest" />
+        <item itemvalue="Gradle.ProductDetailsViewModelTest" />
         <item itemvalue="Gradle.ProductListMapperTest" />
-        <item itemvalue="Gradle.HomeViewModelTest" />
-        <item itemvalue="Gradle.HomeViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response" />
+        <item itemvalue="Gradle.ProductListViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response" />
+        <item itemvalue="Gradle.ProductDetailsViewModelTest.WHEN fetchProductDetails called THEN update livedata on Response" />
       </list>
     </recent_temporary>
   </component>
@@ -416,12 +410,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/test/java/com/beer/product/data/mapper/ProductListMapperTest.kt</url>
-          <line>40</line>
+          <line>44</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/test/java/com/beer/product/data/mapper/ProductListMapperTest.kt</url>
-          <line>45</line>
+          <line>49</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
@@ -446,7 +440,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/test/java/com/beer/product/ui/productDetails/ProductDetailsViewModelTest.kt</url>
-          <line>51</line>
+          <line>50</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
@@ -456,7 +450,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/beer/product/data/repository/ProductListRepositoryImpl.kt</url>
-          <line>14</line>
+          <line>15</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
@@ -478,6 +472,14 @@
           <line>24</line>
           <properties class="com.beer.product.ui.productDetails.ProductDetailsViewModel" method="fetchProductDetails" />
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/app/src/test/java/com/beer/product/ui/productDetails/ProductDetailsViewModelTest.kt</url>
+          <line>43</line>
+          <properties class="com.beer.product.ui.productDetails.ProductDetailsViewModelTest" method="WHEN fetchProductDetails called THEN update livedata on Response">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <breakpoint enabled="true" suspend="THREAD" type="java-exception">
           <properties class="java.lang.ExceptionInInitializerError" package="java.lang" />

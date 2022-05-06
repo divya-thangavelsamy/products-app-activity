@@ -50,7 +50,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideListUseCase(repository: ProductListRepository): ProductListUseCase {
-        return HomeUseCaseImpl(repository)
+        return ProductListUseCaseImpl(repository)
     }
 
     @Provides

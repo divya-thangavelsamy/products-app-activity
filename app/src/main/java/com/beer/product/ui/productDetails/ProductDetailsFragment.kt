@@ -37,7 +37,9 @@ class ProductDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.fetchProductDetails(args.id)
+        if(savedInstanceState == null) {
+            viewModel.fetchProductDetails(args.id)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

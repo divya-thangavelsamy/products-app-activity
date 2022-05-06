@@ -15,9 +15,9 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class HomeViewModelTest {
+class ProductListViewModelTest {
 
-    private val useCase = mockk<HomeUseCaseImpl>()
+    private val useCase = mockk<ProductListUseCase>()
     private val productListDomainModel = mockk<ProductListDomainModel>()
     private val mockLiveDataObserver = mockk<ResultOf<ProductListDomainModel>>()
     private lateinit var viewModel: ProductListViewModel

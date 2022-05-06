@@ -28,15 +28,19 @@ class ProductListMapperTest {
 
     @Test
     fun `WHEN mapper maps response and THEN returns valid domain model`() {
-        every { productResponse.id } returns PRODUCT_ID
-        every { productResponse.name } returns PRODUCT_NAME
-        every { productResponse.tagline } returns PRODUCT_TAG_LINE
-        every { productResponse.image_url } returns PRODUCT_IMAGE_URL
+        with(productResponse) {
+            every { id } returns PRODUCT_ID
+            every { name } returns PRODUCT_NAME
+            every { tagline } returns PRODUCT_TAG_LINE
+            every { image_url } returns PRODUCT_IMAGE_URL
+        }
 
-        every { productListDomainModel.id } returns PRODUCT_ID
-        every { productListDomainModel.name } returns PRODUCT_NAME
-        every { productListDomainModel.tagline } returns PRODUCT_TAG_LINE
-        every { productListDomainModel.imageUrl } returns PRODUCT_IMAGE_URL
+        with(productListDomainModel) {
+            every { id } returns PRODUCT_ID
+            every { name } returns PRODUCT_NAME
+            every { tagline } returns PRODUCT_TAG_LINE
+            every { imageUrl } returns PRODUCT_IMAGE_URL
+        }
 
         val result = mapper.map(listOf(productResponse))
 

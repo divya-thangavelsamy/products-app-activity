@@ -3,9 +3,8 @@ package com.beer.product.ui.productDetails
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.beer.product.RxImmediateSchedulerRule
 import com.beer.product.data.repository.ResultOf
-import com.beer.product.domain.DetailsUseCaseImpl
-import com.beer.product.domain.DetailsUseCaseTest
 import com.beer.product.domain.ProductDetailsDomainModel
+import com.beer.product.domain.ProductDetailsUseCaseImpl
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.unmockkAll
@@ -18,7 +17,7 @@ import org.junit.Test
 
 class ProductDetailsViewModelTest {
 
-    private val useCase = mockk<DetailsUseCaseImpl>()
+    private val useCase = mockk<ProductDetailsUseCaseImpl>()
     private val productDetailsDomainModel = mockk<ProductDetailsDomainModel>()
     private val mockLiveDataObserver = mockk<ResultOf<ProductDetailsDomainModel>>()
     private lateinit var viewModel: ProductDetailsViewModel

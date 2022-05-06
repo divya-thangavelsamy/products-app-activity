@@ -7,4 +7,3 @@ sealed class ResultOf<out T> {
         val throwable: Throwable?
     ) : ResultOf<Nothing>()
 }
-

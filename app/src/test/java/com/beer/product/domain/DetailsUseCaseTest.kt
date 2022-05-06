@@ -10,15 +10,15 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
-class DetailsUseCaseTest {
+class ProductDetailsUseCaseTest {
 
     private val repository = mockk<ProductDetailsRepositoryImpl>()
     private val productDetailsDomainModel = mockk<ProductDetailsDomainModel>()
-    private lateinit var useCase: DetailsUseCase
+    private lateinit var useCase: ProductDetailsUseCase
 
     @Before
     fun setUp() {
-        useCase = DetailsUseCaseImpl(repository)
+        useCase = ProductDetailsUseCaseImpl(repository)
     }
 
     @After
