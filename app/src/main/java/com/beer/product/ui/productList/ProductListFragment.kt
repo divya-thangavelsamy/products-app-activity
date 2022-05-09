@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.beer.product.data.repository.ResultOf
+import com.beer.product.utils.hide
+import com.beer.product.utils.show
 import com.example.product.databinding.FragmentProductListBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -68,20 +70,6 @@ class ProductListFragment : Fragment() {
                 )
             )
         }
-    }
-
-    private fun View.show(): View {
-        if (visibility != View.VISIBLE) {
-            visibility = View.VISIBLE
-        }
-        return this
-    }
-
-    private fun View.hide(): View {
-        if (visibility != View.GONE) {
-            visibility = View.GONE
-        }
-        return this
     }
 }
 

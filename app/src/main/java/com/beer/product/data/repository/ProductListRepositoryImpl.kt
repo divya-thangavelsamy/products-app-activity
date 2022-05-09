@@ -18,4 +18,3 @@ class ProductListRepositoryImpl @Inject constructor(
             }
     }
 }
-

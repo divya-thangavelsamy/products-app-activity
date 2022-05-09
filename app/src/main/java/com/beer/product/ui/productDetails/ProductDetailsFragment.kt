@@ -12,6 +12,8 @@ import androidx.navigation.fragment.navArgs
 import coil.api.load
 import com.beer.product.data.repository.ResultOf
 import com.beer.product.domain.ProductDetailsDomainModel
+import com.beer.product.utils.hide
+import com.beer.product.utils.show
 import com.example.product.R
 import com.example.product.databinding.FragmentProductDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -81,20 +83,6 @@ class ProductDetailsFragment : Fragment() {
             beerabv.text = result.value.abv.toString()
             progressBar.hide()
         }
-    }
-
-    private fun View.show(): View {
-        if (visibility != View.VISIBLE) {
-            visibility = View.VISIBLE
-        }
-        return this
-    }
-
-    private fun View.hide(): View {
-        if (visibility != View.GONE) {
-            visibility = View.GONE
-        }
-        return this
     }
 }
 
