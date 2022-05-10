@@ -24,8 +24,9 @@ class ProductDetailsViewModel @Inject constructor(private val detailsUseCase: Pr
 
     fun fetchProductDetails(id: Int) {
         compositeDisposable.add(
-            detailsUseCase(id).observeOn(AndroidSchedulers.mainThread())
+            detailsUseCase(id)
                 .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { data -> onResponse(data) },
                     { error -> onFailure(error) })
