@@ -3,7 +3,8 @@ package com.beer.product.ui.productDetails
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.beer.product.RxImmediateSchedulerRule
 import com.beer.product.data.repository.ResultOf
-import com.beer.product.domain.*
+import com.beer.product.domain.ProductListDomainModel
+import com.beer.product.domain.ProductListUseCase
 import com.beer.product.ui.productList.ProductListViewModel
 import io.mockk.every
 import io.mockk.mockk

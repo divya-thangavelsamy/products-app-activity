@@ -14,7 +14,7 @@ class ProductListMapperTest {
 
     private val productListDomainModel = mockk<ProductListDomainModel>()
     private val productResponse = mockk<ProductResponse>()
-    private lateinit var mapper : ProductListMapper
+    private lateinit var mapper: ProductListMapper
 
     @Before
     fun setUp() {

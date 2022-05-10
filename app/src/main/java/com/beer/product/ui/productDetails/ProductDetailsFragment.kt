@@ -28,7 +28,6 @@ class ProductDetailsFragment : Fragment() {
 
     private val args: ProductDetailsFragmentArgs by navArgs()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +38,7 @@ class ProductDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             viewModel.fetchProductDetails(args.id)
         }
     }

@@ -1,6 +1,5 @@
 package com.beer.product.data.di
 
-import android.content.Context
 import com.beer.product.data.api.WebService
 import com.beer.product.data.mapper.ProductDetailsMapper
 import com.beer.product.data.mapper.ProductListMapper
@@ -11,7 +10,6 @@ import com.beer.product.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -24,7 +22,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(@ApplicationContext context: Context): Retrofit {
+    fun provideRetrofit(): Retrofit {
         return Retrofit
             .Builder()
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

@@ -32,7 +32,7 @@ class ProductDetailsViewModel @Inject constructor(private val detailsUseCase: Pr
         )
     }
 
-    private fun onFailure(error: Throwable?) {
+    private fun onFailure(error: Throwable) {
         _productDetails.postValue(ResultOf.Failure(error))
     }
 

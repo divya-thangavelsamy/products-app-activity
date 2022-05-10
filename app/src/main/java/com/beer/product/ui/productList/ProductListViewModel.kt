@@ -27,15 +27,15 @@ class ProductListViewModel @Inject constructor(private val productListUseCase: P
         _productList.postValue(ResultOf.Loading)
         compositeDisposable.add(
             productListUseCase()
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { data -> onResponse(data) },
                     { error -> onFailure(error) })
         )
     }
 
-    private fun onFailure(error: Throwable?) {
+    private fun onFailure(error: Throwable) {
         _productList.postValue(ResultOf.Failure(error))
     }
 

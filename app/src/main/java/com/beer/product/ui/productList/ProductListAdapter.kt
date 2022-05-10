@@ -40,18 +40,24 @@ class ProductListAdapter @Inject constructor(val clickListener: ClickListener) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val beerlist = getItem(position)
-        holder.bind(beerlist, clickListener)
+        val beerList = getItem(position)
+        holder.bind(beerList, clickListener)
     }
 
     class ProductListDiffCallback : DiffUtil.ItemCallback<ProductListDomainModel>() {
 
-        override fun areItemsTheSame(oldItem: ProductListDomainModel, newItem: ProductListDomainModel): Boolean {
+        override fun areItemsTheSame(
+            oldItem: ProductListDomainModel,
+            newItem: ProductListDomainModel
+        ): Boolean {
             return oldItem.id == newItem.id
         }
 
         @SuppressLint("DiffUtilEquals")
-        override fun areContentsTheSame(oldItem: ProductListDomainModel, newItem: ProductListDomainModel): Boolean {
+        override fun areContentsTheSame(
+            oldItem: ProductListDomainModel,
+            newItem: ProductListDomainModel
+        ): Boolean {
             return oldItem == newItem
         }
     }

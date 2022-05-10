@@ -2,14 +2,14 @@ package com.beer.product.utils
 
 import android.view.View
 
-fun View.show() : View {
+fun View.show(): View {
     if (visibility != View.VISIBLE) {
         visibility = View.VISIBLE
     }
     return this
 }
 
- fun View.hide(): View {
+fun View.hide(): View {
     if (visibility != View.GONE) {
         visibility = View.GONE
     }

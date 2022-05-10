@@ -8,4 +8,3 @@ data class ProductDetailsDomainModel(
     val ibu: Double,
     val abv: Double
 )
-

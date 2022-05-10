@@ -6,4 +6,3 @@ data class ProductListDomainModel(
     val tagline: String,
     val imageUrl: String,
 )
-

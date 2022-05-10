@@ -38,7 +38,7 @@ class ProductDetailsRepositoryTest {
             apiService.getProductDetails(2)
         } returns Single.just(listOf(productDetailsResponse))
         every { productDetailsMapper.map(productDetailsResponse) } returns
-            productDetailsDomainModel
+                productDetailsDomainModel
 
         val result = repository.fetchProductDetails(2).test().values()[0]
 
