@@ -32,22 +32,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5e1fc44-a0ac-4531-b1ae-9d0e6d4c1318" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/api/WebService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/api/WebService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/data/di/AppModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductDetailsDomainModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductDetailsDomainModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductDetailsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductDetailsUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListDomainModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListDomainModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/domain/ProductListUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productList/ProductListViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/beer/product/utils/Extensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/beer/product/utils/Extensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/beer/product/data/mapper/ProductListMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/beer/product/data/mapper/ProductListMapperTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/beer/product/data/repository/ProductDetailsRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/beer/product/data/repository/ProductDetailsRepositoryTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/beer/product/ui/productList/HomeViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/beer/product/ui/productList/HomeViewModelTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -451,7 +436,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/beer/product/ui/productDetails/ProductDetailsViewModel.kt</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
