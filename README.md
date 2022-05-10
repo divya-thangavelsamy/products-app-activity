@@ -5,6 +5,6 @@
 3.	Used Hilt to manage dependencies
 4.	LiveData for holding the data and updating the UI
 5.	Used RXJava with retrofit
-6.	Used Koin to load images.
+6.	Used Coil to load images.
 7.	MVVM Architecture
 8.	Used View binding to bind the xml layout
